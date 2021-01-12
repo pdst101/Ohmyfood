@@ -1,0 +1,24 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "Ohmyfood website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdst101/Ohmyfood.git"
+  },
+  "keywords": [
+    "restaurant",
+    "booking",
+    "website"
+  ],
+  "author": "Natalia Malarczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdst101/Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/pdst101/Ohmyfood#readme"
+}
