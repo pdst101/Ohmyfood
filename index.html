@@ -14,74 +14,80 @@
         <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <header>
-            <img src="img/ohmyfood.png" alt="Ohmyfood logo" id="logo">
-            <div>
-                <h5>Paris, Belleville</h5>
-                <h2>Book the menu you like</h2>
-                <p>Discover top-of-the-art restaurants we picked for you</p>
-                <button>Explore our restaurants</button>
+        <header class="header">
+            <img src="img/ohmyfood.png" alt="Ohmyfood logo" class="header__logo">
+            <div class ="header-section">
+                <h5><i class="fas fa-map-marker-alt"></i>Paris, Belleville</h5>
+                <h3>Book the menu you like</h3>
+                <p>Discover top-of-the-art restaurants we<br>picked for you</p>
+                <button class="btn--gradient">Explore our restaurants</button>
             </div>
         </header>
-        <nav>
+        <nav class="nav">
             <h2>How it works</h2>
-            <button><i class="fas fa-mobile-alt"></i><strong>Choose a reastaurant</strong></button>
-            <button><i class="fas fa-list-ul"></i><strong>Create a menu</strong></button>
-            <button><i class="fas fa-store"></i><strong>Go enjoy it at the restaurant</strong></button>
+            <button><p class="nav-point">1</p><i class="fas fa-mobile-alt"></i><strong>Choose a reastaurant</strong></button>
+            <button><p class="nav-point">2</p><i class="fas fa-list-ul"></i><strong>Create a menu</strong></button>
+            <button><p class="nav-point">3</p><i class="fas fa-store"></i><strong>Go enjoy it at the restaurant</strong></button>
         </nav>
-        <main>
-            <div>
-                <h2>Restaurants</h2>
-                <div class="restaurant-option">
-                    <a href="#">
-                        <img src="" alt="restaurant picture">
-                        <div>
-                            <p><strong>The Full Palette</strong></p>
-                            <p>New York</p>
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="restaurant-option">
-                    <a href="#">
-                        <img src="" alt="restaurant picture">
-                        <div>
-                            <p><strong>The Enchanted Place</strong></p>
-                            <p>New York</p>
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="restaurant-option">
-                    <a href="#">
-                        <img src="" alt="restaurant picture">
-                        <div>
-                            <p><strong>Bastille</strong></p>
-                            <p>New York</p>
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="restaurant-option">
-                    <a href="">
-                        <img src="" alt="restaurant picture">
-                        <div>
-                            <p><strong>Le Gourmand</strong></p>
-                            <p>New York</p>
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
+        <main class="main">
+            <h2>Restaurants</h2>
+            <div class="main-option">
+                <a href="the-full-palette.html">
+                    <div class="main-option__pic">
+                        <img src="img/the-full-palette.jpg" alt="restaurant picture">
+                    </div>
+                    <div class="main-option__name">
+                        <p><strong>The Full Palette</strong></p>
+                        <p>New York</p>
+                    </div>
+                </a>
+                <i class="far fa-heart"></i>
+            </div>
+            <div class="main-option">
+                <a href="the-enchanted-plate.html">
+                    <div class="main-option__pic">
+                        <img src="img/the-enchanted-plate.jpg" alt="restaurant picture">
+                    </div>
+                    <div class="main-option__name">
+                        <p><strong>The Enchanted Plate</strong></p>
+                        <p>New York</p>
+                    </div>
+                </a>
+                <i class="far fa-heart"></i>
+            </div>
+            <div class="main-option">
+                <a href="bastille.html">
+                    <div class="main-option__pic">
+                        <img src="img/bastille.jpg" alt="restaurant picture">
+                    </div>
+                    <div class="main-option__name">
+                        <p><strong>Bastille</strong></p>
+                        <p>New York</p>
+                    </div>
+                </a>
+                <i class="far fa-heart"></i>
+            </div>
+            <div class="main-option">
+                <a href="le-gourmand.html">
+                    <div class="main-option__pic">
+                        <img src="img/le-gourmand.jpg" alt="restaurant picture">
+                    </div>
+                    <div class="main-option__name">
+                        <p><strong>Le Gourmand</strong></p>
+                        <p>New York</p>
+                    </div>
+                </a>
+                <i class="far fa-heart"></i>
             </div>
         </main>
         <footer class="footer">
             <div>
-                <img src="img/ohmyfood.png" alt="Ohmyfood logo" id="logo">
+                <img src="img/ohmyfood.png" alt="Ohmyfood logo" class="footer__logo">
                 <ul>
                     <li><a href="#"><i class="fas fa-utensils"></i>Suggest a restaurant</a></li>
                     <li><a href="#"><i class="fas fa-hands-helping"></i>Become a partner</a></li>
                     <li><a href="#">Legal</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="mailto:ohmyfood@yoursite.com">Contact</a></li>
                 </ul>
             </div>
         </footer>
