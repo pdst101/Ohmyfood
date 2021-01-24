@@ -14,6 +14,14 @@
     -webkit-text-fill-color: transparent;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -138,6 +146,7 @@ button:active, button:active, button:focus {
   position: relative;
   box-shadow: 1px 1px 5px 1px #cccccc;
   border-radius: 20px;
+  width: 100%;
 }
 .main-option__button {
   position: absolute;
@@ -155,15 +164,9 @@ button:active, button:active, button:focus {
   right: 0px;
   bottom: 0px;
 }
-.main-option__button i:hover {
+.main-option__button:focus i {
   animation: fill-gradient 2s;
   animation-fill-mode: forwards;
-}
-.main-option__button:focus i {
-  opacity: 1;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .main-option img {
   width: 100%;
@@ -239,15 +242,9 @@ button:active, button:active, button:focus {
   right: 0px;
   bottom: 0px;
 }
-.menu-title__button i:hover {
+.menu-title__button:focus i {
   animation: fill-gradient 2s;
   animation-fill-mode: forwards;
-}
-.menu-title__button:focus i {
-  opacity: 1;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .menu-submit {
   text-align: center;
@@ -296,7 +293,12 @@ button:active, button:active, button:focus {
 }
 .menu-section__option--item {
   margin: 10px;
-  flex-grow: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  position: relative;
+  min-width: 0;
+}
+.menu-section__option--item p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -307,19 +309,26 @@ button:active, button:active, button:focus {
 .menu-section__option--price {
   padding: 40px 15px 10px 15px;
   font-weight: 700;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 .menu-section__option:focus > .menu-section__option--slider {
   transform: scaleX(1);
+  flex-grow: 1;
+  width: 100px;
+  max-width: 65px;
+}
+.menu-section__option:focus i {
+  animation: spin 400ms;
 }
 .menu-section__option--slider {
   background-color: #99E2D0;
   flex-grow: 0;
   float: right;
-  padding: 23px;
   text-align: center;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 1s;
+  transition: transform 500ms ease-out;
   border-radius: 0px 15px 15px 0px;
 }
 .menu-section__option--slider i {
@@ -327,6 +336,7 @@ button:active, button:active, button:focus {
   border-radius: 50%;
   color: #99E2D0;
   padding: 3px;
+  margin: 25px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
