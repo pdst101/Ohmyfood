@@ -10,7 +10,16 @@ $color-bg-main: #f2f2f2;
 $color-txt: #000000;
 $titles-font: "Shrikhand", cursive;
 $text-font: "Roboto", sans-serif;
-
+@keyframes fill-gradient {
+    from {opacity: 0;
+        background: -webkit-linear-gradient($color-primary, $color-secondary);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;}
+    to {opacity: 1;
+        background: -webkit-linear-gradient($color-primary, $color-secondary);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;}
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +27,13 @@ $text-font: "Roboto", sans-serif;
 body {
     font-family: $text-font;
     max-width: 480px;
+    min-width: 420px;
     & ul {
         list-style-type: none;
     }
+}
+.fas.fa-heart {
+    opacity: 0;
 }
 a {
     text-decoration: none;
@@ -106,23 +119,48 @@ button:active, button:active, button:focus {
     align-content: flex-start;
     background-color: $color-bg-main;
     padding: 60px 20px;
+    &-tag--new {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: $color-tertiary;
+        z-index: 2;
+        color: darken($color-tertiary, 45%);
+        padding: 5px 30px;
+        font-weight: 600;
+    }
     &-option {
         margin-top: 20px;
         position: relative;
         box-shadow: 1px 1px 5px 1px darken($color-bg-main, 15%);
         border-radius: 20px;
-        & i {
+        &__button {
             position: absolute;
-            font-size: 25px;
-            right: 30px;
+            right: 25px;
             bottom: 20px;
+            cursor: pointer;
             z-index: 2;
+            box-shadow: none;
+            outline: 0;
+            border: 0;
+            & i {
+                font-size: 25px;
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                }
+            & i:hover {
+                animation: fill-gradient 2s;
+                animation-fill-mode: forwards;
             }
-        & i:hover, i:after, i:active, i:visited {
-            color: $color-primary;
-            z-index: 2;
-            position: absolute;
-        }
+            &:focus {
+                & i {
+                    opacity: 1;
+                    background: -webkit-linear-gradient($color-primary, $color-secondary);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;}
+                }
+            }
         & img {
             width: 100%;
             height: 220px;
@@ -138,9 +176,7 @@ button:active, button:active, button:focus {
         &__name {
             background-color: $color-txt-footer;
             padding: 15px;
-            width: 410px;
             border-radius: 0px 0px 20px 20px;
-            display: inline-block;
             font-size: 20px;
         }
     }
@@ -170,7 +206,7 @@ button:active, button:active, button:focus {
     margin-top: -40px;
     position: relative;
     z-index: 10;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 40px 40px 0px 0px;
     & hr {
         width: 9%;
         border: 1px solid $color-tertiary;
@@ -179,7 +215,35 @@ button:active, button:active, button:focus {
     }
     &-title {
         font-family: $titles-font;
-        font-size: 30px;
+        font-size: 35px;
+        padding: 30px 5px;
+        &__button {
+            position: absolute;
+            right: 40px;
+            top: 75px;
+            cursor: pointer;
+            z-index: 2;
+            box-shadow: none;
+            outline: 0;
+            border: 0;
+            & i {
+                font-size: 35px;
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                }
+            & i:hover {
+                animation: fill-gradient 2s;
+                animation-fill-mode: forwards;
+            }
+            &:focus {
+                & i {
+                    opacity: 1;
+                    background: -webkit-linear-gradient($color-primary, $color-secondary);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;}
+                }
+        }
     }
     &-submit {
         text-align: center;
@@ -207,6 +271,8 @@ button:active, button:active, button:focus {
         padding: 15px 0px;
         & h4 {
             padding: 0px 5px;
+            font-weight: 300;
+            font-size: 18px;
         }
         &__option {
             text-align: left;
@@ -215,6 +281,7 @@ button:active, button:active, button:focus {
             border: none;
             margin: 5px 0px;
             border-radius: 15px;
+            font-size: 18px;
             box-shadow: 1px 1px 5px 1px darken($color-bg-main, 15%);
             & p {
                 padding: 5px 0px 0px 0px;

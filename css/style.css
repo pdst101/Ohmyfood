@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@keyframes fill-gradient {
+  from {
+    opacity: 0;
+    background: -webkit-linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  to {
+    opacity: 1;
+    background: -webkit-linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +22,14 @@
 body {
   font-family: "Roboto", sans-serif;
   max-width: 480px;
+  min-width: 420px;
 }
 body ul {
   list-style-type: none;
+}
+
+.fas.fa-heart {
+  opacity: 0;
 }
 
 a {
@@ -104,23 +123,47 @@ button:active, button:active, button:focus {
   background-color: #f2f2f2;
   padding: 60px 20px;
 }
+.main-tag--new {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #99E2D0;
+  z-index: 2;
+  color: #217460;
+  padding: 5px 30px;
+  font-weight: 600;
+}
 .main-option {
   margin-top: 20px;
   position: relative;
   box-shadow: 1px 1px 5px 1px #cccccc;
   border-radius: 20px;
 }
-.main-option i {
+.main-option__button {
   position: absolute;
-  font-size: 25px;
-  right: 30px;
+  right: 25px;
   bottom: 20px;
+  cursor: pointer;
   z-index: 2;
+  box-shadow: none;
+  outline: 0;
+  border: 0;
 }
-.main-option i:hover, .main-option i:after, .main-option i:active, .main-option i:visited {
-  color: #9356DC;
-  z-index: 2;
+.main-option__button i {
+  font-size: 25px;
   position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.main-option__button i:hover {
+  animation: fill-gradient 2s;
+  animation-fill-mode: forwards;
+}
+.main-option__button:focus i {
+  opacity: 1;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .main-option img {
   width: 100%;
@@ -137,9 +180,7 @@ button:active, button:active, button:focus {
 .main-option__name {
   background-color: #ffffff;
   padding: 15px;
-  width: 410px;
   border-radius: 0px 0px 20px 20px;
-  display: inline-block;
   font-size: 20px;
 }
 
@@ -169,7 +210,7 @@ button:active, button:active, button:focus {
   margin-top: -40px;
   position: relative;
   z-index: 10;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 40px 40px 0px 0px;
 }
 .menu hr {
   width: 9%;
@@ -179,7 +220,34 @@ button:active, button:active, button:focus {
 }
 .menu-title {
   font-family: "Shrikhand", cursive;
-  font-size: 30px;
+  font-size: 35px;
+  padding: 30px 5px;
+}
+.menu-title__button {
+  position: absolute;
+  right: 40px;
+  top: 75px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: none;
+  outline: 0;
+  border: 0;
+}
+.menu-title__button i {
+  font-size: 35px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.menu-title__button i:hover {
+  animation: fill-gradient 2s;
+  animation-fill-mode: forwards;
+}
+.menu-title__button:focus i {
+  opacity: 1;
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .menu-submit {
   text-align: center;
@@ -208,6 +276,8 @@ button:active, button:active, button:focus {
 }
 .menu-section h4 {
   padding: 0px 5px;
+  font-weight: 300;
+  font-size: 18px;
 }
 .menu-section__option {
   text-align: left;
@@ -216,6 +286,7 @@ button:active, button:active, button:focus {
   border: none;
   margin: 5px 0px;
   border-radius: 15px;
+  font-size: 18px;
   box-shadow: 1px 1px 5px 1px #cccccc;
 }
 .menu-section__option p {
