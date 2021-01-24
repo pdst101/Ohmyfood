@@ -280,22 +280,53 @@ button:active, button:active, button:focus {
   font-size: 18px;
 }
 .menu-section__option {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
   text-align: left;
-  padding: 5px 10px 10px 10px;
   background-color: #ffffff;
   border: none;
   margin: 5px 0px;
   border-radius: 15px;
   font-size: 18px;
   box-shadow: 1px 1px 5px 1px #cccccc;
+  width: 100%;
+  cursor: pointer;
+}
+.menu-section__option--item {
+  margin: 10px;
+  flex-grow: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu-section__option p {
   padding: 5px 0px 0px 0px;
 }
-.menu-section__option span {
-  float: right;
-  padding: 0px 15px 0px 0px;
+.menu-section__option--price {
+  padding: 40px 15px 10px 15px;
   font-weight: 700;
+}
+.menu-section__option:focus > .menu-section__option--slider {
+  transform: scaleX(1);
+}
+.menu-section__option--slider {
+  background-color: #99E2D0;
+  flex-grow: 0;
+  float: right;
+  padding: 23px;
+  text-align: center;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 1s;
+  border-radius: 0px 15px 15px 0px;
+}
+.menu-section__option--slider i {
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */

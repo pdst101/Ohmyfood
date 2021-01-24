@@ -275,21 +275,55 @@ button:active, button:active, button:focus {
             font-size: 18px;
         }
         &__option {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: stretch;
             text-align: left;
-            padding: 5px 10px 10px 10px;
             background-color: $color-txt-footer;
             border: none;
             margin: 5px 0px;
             border-radius: 15px;
             font-size: 18px;
             box-shadow: 1px 1px 5px 1px darken($color-bg-main, 15%);
+            width: 100%;
+            cursor: pointer;
+            &--item {
+                margin: 10px;
+                flex-grow: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
             & p {
                 padding: 5px 0px 0px 0px;
             }
-            & span {
-                float: right;
-                padding: 0px 15px 0px 0px;
+            &--price {
+                padding: 40px 15px 10px 15px;
                 font-weight: 700;
+            }
+            &:focus {
+                & > .menu-section__option--slider {
+                    transform: scaleX(1);
+                }
+            }
+            &--slider {
+                background-color: $color-tertiary;
+                flex-grow: 0;
+                float: right;
+                padding: 23px;
+                text-align: center;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 1s;
+                
+                border-radius: 0px 15px 15px 0px;
+                & i {
+                    background-color: $color-txt-footer;
+                    border-radius: 50%;
+                    color: $color-tertiary;
+                    padding: 3px;
+                }
             }
         }
     }
