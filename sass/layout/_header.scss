@@ -1,0 +1,29 @@
+.header {
+    text-align: center;
+
+    &__logo {
+        height: 35px;
+        padding: 5px;
+    }
+
+    & i {
+        padding: 0px 20px 0px 0px;
+    }
+
+    & h5 {
+        background-color: darken($color-bg-main, 5%);
+        padding: 15px;
+        font-size: 20px;
+        box-shadow: inset 0px 6px 5px -5px darken($color-bg-main, 30%);
+    }
+
+    & h3 {
+        padding: 40px;
+    }
+
+    &-section {
+        background-color: $color-bg-main;
+        font-size: 20px;
+        border-top: darken($color-bg-main, 30%) solid 1px;
+    }
+}

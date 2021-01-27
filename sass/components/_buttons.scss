@@ -1,0 +1,26 @@
+button {
+    box-shadow: 1px 1px 5px 1px darken($color-bg-main, 15%);
+}
+
+button:active,
+button:active,
+button:focus {
+    outline: none;
+}
+
+.btn--gradient {
+    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    padding: 15px 25px;
+    color: $color-txt-footer;
+    border: 0px;
+    border-radius: 24px;
+    margin: 40px 0px 50px 0px;
+    font-size: 17px;
+    box-shadow: 1px 1px 5px 1px darken($color-bg-main, 25%);
+    cursor: pointer;
+    
+    &:hover {
+        background-image: linear-gradient(to bottom right, lighten($color-secondary, 1%), lighten($color-primary, 5%));
+        box-shadow: 2px 2px 5px 1px darken($color-bg-main, 25%);
+    }
+}

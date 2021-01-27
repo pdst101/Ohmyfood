@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $text-font;
+    max-width: $breakpoint-tablet;
+    min-width: 480px;
+
+    & ul {
+        list-style-type: none;
+    }
+
+    @include for-tablets {
+        max-width: $breakpoint-desktop;
+    }
+
+    @include for-desktop {
+        max-width: none;
+    }
+}

@@ -1,0 +1,151 @@
+.menu {
+    background-color: $color-bg-main !important;
+    padding: 10px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+    border-radius: 40px 40px 0px 0px;
+
+    &-flex {
+        display: flex;
+        flex-flow: column wrap;
+
+        @include for-tablets {
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+    }
+
+    & hr {
+        width: 9%;
+        border: 1px solid $color-tertiary;
+        margin: 2px 5px 10px 5px;
+    }
+
+    &-title {
+        font-family: $titles-font;
+        font-size: 35px;
+        padding: 30px 5px;
+
+        &__button {
+            position: absolute;
+            right: 30px;
+            top: 80px;
+            cursor: pointer;
+            z-index: 2;
+            box-shadow: none;
+            outline: 0;
+            border: 0;
+
+            & i {
+                font-size: 35px;
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+            }
+
+            &:focus {
+                & i {
+                    animation: fill-gradient 2s;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            @include for-desktop {
+                &:hover {
+                    & i {
+                        animation: fill-gradient 2s;
+                        animation-fill-mode: forwards;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &-submit {
+        text-align: center;
+
+        & button {
+            padding: 15px 100px;
+        }
+    }
+
+    &-header {
+        padding: 0px 30px 0px 0px;
+
+        & i {
+            float: left;
+            font-size: 20px;
+            padding: 10px 0px 10px 30px;
+        }
+
+        &__bg {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &-section {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 15px 0px;
+
+        @include for-tablets {
+            width: 49%;
+        }
+
+        @include for-desktop {
+            width: 32.8%;
+        }
+
+        & h4 {
+            padding: 0px 5px;
+            font-weight: 300;
+            font-size: 18px;
+        }
+
+        &__option {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: stretch;
+            text-align: left;
+            background-color: $color-txt-footer;
+            border: none;
+            margin: 5px 0px;
+            border-radius: 15px;
+            font-size: 18px;
+            box-shadow: 1px 1px 5px 1px darken($color-bg-main, 15%);
+            width: 100%;
+            cursor: pointer;
+
+            &--item {
+                margin: 10px;
+                flex-grow: 1;
+                flex-shrink: 1;
+                position: relative;
+                min-width: 0;
+
+                & p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            & p {
+                padding: 5px 0px 0px 0px;
+            }
+
+            &--price {
+                padding: 40px 15px 10px 15px;
+                font-weight: 700;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

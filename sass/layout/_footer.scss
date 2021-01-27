@@ -1,0 +1,23 @@
+.footer {
+    background-color: $color-bg-footer;
+    padding: 25px;
+
+    & a {
+        color: $color-txt-footer;
+    }
+
+    &__logo {
+        height: 20px;
+        filter: invert(100);
+        padding-bottom: 10px;
+    }
+
+    & li {
+        padding: 5px 0px;
+    }
+
+    & i {
+        padding-right: 10px;
+        width: 15px;
+    }
+}

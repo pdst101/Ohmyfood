@@ -1,0 +1,44 @@
+.load__item {
+    visibility: hidden;
+    animation: load $load-dur forwards;
+
+    @for $i from 1 through $num-items {
+        &--#{$i} {
+            animation-delay: $load-delay * $i;
+        }
+    }
+}
+
+.menu-section__option {
+    &:hover {
+        & > .menu-section__option--slider {
+            transform: scaleX(1);
+            flex-grow: 1;
+            width: 100px;
+            max-width: 65px;
+        }
+    }
+
+    & i {
+        animation: spin 500ms;
+    }
+
+    &--slider {
+        background-color: $color-tertiary;
+        flex-grow: 0;
+        float: right;
+        text-align: center;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 500ms ease-out;
+        border-radius: 0px 15px 15px 0px;
+
+        & i {
+            background-color: $color-txt-footer;
+            border-radius: 50%;
+            color: $color-tertiary;
+            padding: 3px;
+            margin: 25px 0px;
+        }
+    }
+}
