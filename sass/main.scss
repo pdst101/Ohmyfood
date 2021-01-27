@@ -414,7 +414,6 @@ button:focus {
     & hr {
         width: 9%;
         border: 1px solid $color-tertiary;
-        background-color: $color-tertiary;
         margin: 2px 5px 10px 5px;
     }
 
@@ -543,7 +542,7 @@ button:focus {
                 flex-shrink: 0;
             }
 
-            &:focus {
+            &:hover {
                 & > .menu-section__option--slider {
                     transform: scaleX(1);
                     flex-grow: 1;
@@ -556,21 +555,6 @@ button:focus {
                 }
             }
 
-            @include for-desktop {
-                &:hover {
-                    & > .menu-section__option--slider {
-                        transform: scaleX(1);
-                        flex-grow: 1;
-                        width: 100px;
-                        max-width: 65px;
-                    }
-
-                    & i {
-                        animation: spin 500ms;
-                    }
-                }
-            }
-
             &--slider {
                 background-color: $color-tertiary;
                 flex-grow: 0;
@@ -579,7 +563,6 @@ button:focus {
                 transform: scaleX(0);
                 transform-origin: right;
                 transition: transform 500ms ease-out;
-
                 border-radius: 0px 15px 15px 0px;
 
                 & i {

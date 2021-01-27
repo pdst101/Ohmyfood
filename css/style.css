@@ -367,7 +367,6 @@ button:focus {
 .menu hr {
   width: 9%;
   border: 1px solid #99E2D0;
-  background-color: #99E2D0;
   margin: 2px 5px 10px 5px;
 }
 .menu-title {
@@ -477,25 +476,14 @@ button:focus {
   flex-grow: 0;
   flex-shrink: 0;
 }
-.menu-section__option:focus > .menu-section__option--slider {
+.menu-section__option:hover > .menu-section__option--slider {
   transform: scaleX(1);
   flex-grow: 1;
   width: 100px;
   max-width: 65px;
 }
-.menu-section__option:focus i {
+.menu-section__option:hover i {
   animation: spin 500ms;
-}
-@media (min-width: 1024px) {
-  .menu-section__option:hover > .menu-section__option--slider {
-    transform: scaleX(1);
-    flex-grow: 1;
-    width: 100px;
-    max-width: 65px;
-  }
-  .menu-section__option:hover i {
-    animation: spin 500ms;
-  }
 }
 .menu-section__option--slider {
   background-color: #99E2D0;
