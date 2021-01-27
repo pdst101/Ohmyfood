@@ -104,11 +104,21 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  max-width: 480px;
-  min-width: 420px;
+  max-width: 576px;
+  min-width: 480px;
 }
 body ul {
   list-style-type: none;
+}
+@media (min-width: 576px) {
+  body {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    max-width: none;
+  }
 }
 
 .spinner {
@@ -143,7 +153,9 @@ button {
   box-shadow: 1px 1px 5px 1px #cccccc;
 }
 
-button:active, button:active, button:focus {
+button:active,
+button:active,
+button:focus {
   outline: none;
 }
 
@@ -193,7 +205,12 @@ button:active, button:active, button:focus {
   justify-content: space-between;
   padding: 30px 0px;
 }
-.nav-point {
+.nav-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+.nav-list__point {
   position: absolute;
   display: inline-block;
   left: -13px;
@@ -202,6 +219,12 @@ button:active, button:active, button:focus {
   color: #ffffff;
   border-radius: 50%;
   padding: 5px 10px;
+}
+@media (min-width: 1024px) {
+  .nav-list {
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
 }
 .nav h2 {
   margin: 20px;
@@ -213,7 +236,7 @@ button:active, button:active, button:focus {
 .nav button {
   margin: 10px 20px;
   text-align: left;
-  padding: 30px 2px;
+  padding: 30px 30px 30px 2px;
   font-size: 19px;
   border-radius: 25px;
   border: none;
@@ -228,6 +251,13 @@ button:active, button:active, button:focus {
   align-content: flex-start;
   background-color: #f2f2f2;
   padding: 60px 20px;
+}
+@media (min-width: 576px) {
+  .main-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 .main-tag--new {
   position: absolute;
@@ -245,6 +275,11 @@ button:active, button:active, button:focus {
   box-shadow: 1px 1px 5px 1px #cccccc;
   border-radius: 20px;
   width: 100%;
+}
+@media (min-width: 576px) {
+  .main-option {
+    width: 48%;
+  }
 }
 .main-option__button {
   position: absolute;
@@ -265,6 +300,12 @@ button:active, button:active, button:focus {
 .main-option__button:focus i {
   animation: fill-gradient 2s;
   animation-fill-mode: forwards;
+}
+@media (min-width: 1024px) {
+  .main-option__button:hover i {
+    animation: fill-gradient 2s;
+    animation-fill-mode: forwards;
+  }
 }
 .main-option img {
   width: 100%;
@@ -313,6 +354,16 @@ button:active, button:active, button:focus {
   z-index: 10;
   border-radius: 40px 40px 0px 0px;
 }
+.menu-flex {
+  display: flex;
+  flex-flow: column wrap;
+}
+@media (min-width: 576px) {
+  .menu-flex {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
 .menu hr {
   width: 9%;
   border: 1px solid #99E2D0;
@@ -326,8 +377,8 @@ button:active, button:active, button:focus {
 }
 .menu-title__button {
   position: absolute;
-  right: 40px;
-  top: 75px;
+  right: 30px;
+  top: 80px;
   cursor: pointer;
   z-index: 2;
   box-shadow: none;
@@ -343,6 +394,12 @@ button:active, button:active, button:focus {
 .menu-title__button:focus i {
   animation: fill-gradient 2s;
   animation-fill-mode: forwards;
+}
+@media (min-width: 1024px) {
+  .menu-title__button:hover i {
+    animation: fill-gradient 2s;
+    animation-fill-mode: forwards;
+  }
 }
 .menu-submit {
   text-align: center;
@@ -368,6 +425,16 @@ button:active, button:active, button:focus {
   display: flex;
   flex-flow: column wrap;
   padding: 15px 0px;
+}
+@media (min-width: 576px) {
+  .menu-section {
+    width: 49%;
+  }
+}
+@media (min-width: 1024px) {
+  .menu-section {
+    width: 32%;
+  }
 }
 .menu-section h4 {
   padding: 0px 5px;
@@ -418,6 +485,17 @@ button:active, button:active, button:focus {
 }
 .menu-section__option:focus i {
   animation: spin 500ms;
+}
+@media (min-width: 1024px) {
+  .menu-section__option:hover > .menu-section__option--slider {
+    transform: scaleX(1);
+    flex-grow: 1;
+    width: 100px;
+    max-width: 65px;
+  }
+  .menu-section__option:hover i {
+    animation: spin 500ms;
+  }
 }
 .menu-section__option--slider {
   background-color: #99E2D0;
