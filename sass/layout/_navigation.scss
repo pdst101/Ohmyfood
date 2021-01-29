@@ -44,5 +44,9 @@
         border: none;
         position: relative;
         background-color: $color-bg-main;
+        @include for-desktop {
+            flex-grow: 1;
+            text-align: center;
+        }
     }
 }
