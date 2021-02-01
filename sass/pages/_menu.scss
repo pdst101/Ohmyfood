@@ -92,6 +92,7 @@
         display: flex;
         flex-flow: column wrap;
         padding: 15px 0px;
+        width: 100%;
 
         @include for-tablets {
             width: 49%;
